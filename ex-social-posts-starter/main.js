@@ -105,7 +105,12 @@ const likeCounter = document.querySelectorAll(".js-likes-counter");
 
 for (let i = 0; i < likeBtn.length; i++) {
     likeBtn[i].addEventListener("click", function () {
-        likeBtn[i].classList.add("like-button--liked");
-        likeCounter[i].innerHTML++;
+        if (!likeBtn[i].classList.contains("like-button--liked")) {
+            likeBtn[i].classList.add("like-button--liked");
+            likeCounter[i].innerHTML++;
+        } else {
+            likeBtn[i].classList.remove("like-button--liked");
+            likeCounter[i].innerHTML--;
+        }
     });
 }
