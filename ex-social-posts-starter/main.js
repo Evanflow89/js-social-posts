@@ -38,7 +38,9 @@ const posts = [
         "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
-            "image": null
+            "image": "https://via.placeholder.com/300x300.png?text=LF"
+
+
         },
         "likes": 56,
         "created": "2021-04-03"
