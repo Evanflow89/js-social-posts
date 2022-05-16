@@ -83,7 +83,7 @@ for (let i = 0; i < posts.length; i++) {
 <div class="post__footer">
     <div class="likes js-likes">
         <div class="likes__cta">
-            <a class="like-button  js-like-button" href="#" data-postid="1">
+            <a id="${posts[i].id}" class="like-button  js-like-button" href="#" data-postid="1">
                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                 <span class="like-button__label">Mi Piace</span>
             </a>
@@ -95,14 +95,15 @@ for (let i = 0; i < posts.length; i++) {
 </div>
 </div>`
     container.innerHTML += post;
+    likeBtn = document.getElementById(`${posts[i].id}`);
+    likeBtn.addEventListener("click", function () {
+        likeBtn.classList.add("like-button--liked");
+    });
+
 }
 
 // Milestone 2 - Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 
-const likeBtn = document.querySelectorAll("a");
-console.log(likeBtn);
 
-likeBtn.addEventListener("click", function () {
-    likeBtn.classList.add("like-button--liked");
-});
+
