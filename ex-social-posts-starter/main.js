@@ -103,7 +103,7 @@ for (let i = 0; i < posts.length; i++) {
 const likeBtn = document.getElementsByClassName("like-button");
 
 for (let i = 0; i < likeBtn; i++) {
-    likeBtn.addEventListener("click", function () {
+    likeBtn[i].addEventListener("click", function () {
         likeBtn.classList.add("like-button--liked");
     });
 }
