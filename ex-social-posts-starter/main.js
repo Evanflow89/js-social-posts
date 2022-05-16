@@ -89,7 +89,7 @@ for (let i = 0; i < posts.length; i++) {
             </a>
         </div>
         <div class="likes__counter">
-            Piace a <b id="like-counter-1" class="js-likes-counter">${posts[i].likes}</b> persone
+            Piace a <b id="like-counter-${posts[i].id}" class="js-likes-counter">${posts[i].likes}</b> persone
         </div>
     </div>
 </div>
@@ -101,9 +101,11 @@ for (let i = 0; i < posts.length; i++) {
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 
 const likeBtn = document.querySelectorAll(".like-button");
+const likeCounter = document.querySelectorAll(".js-likes-counter");
 
 for (let i = 0; i < likeBtn.length; i++) {
     likeBtn[i].addEventListener("click", function () {
         likeBtn[i].classList.add("like-button--liked");
+        likeCounter[i].innerHTML++;
     });
 }
